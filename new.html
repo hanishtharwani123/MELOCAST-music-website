@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melocast</title>
+    <link rel="stylesheet" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@400;500&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --primary-color: #000000;
+        --secondary-color: #e8e3e3;
+        --tertiary-color: #fff;
+        --fourth-color: #000000;
+        --fifth-color: rgb(51, 50, 50);
+        --sixth-color: #b1abab;
+    }
+
+    .white-theme {
+        --primary-color: #fff;
+        --secondary-color: #222121;
+        --tertiary-color: #000000;
+        --fourth-color: #f7f5f5;
+        --fifth-color: rgb(230, 227, 227);
+        --sixth-color: #333030;
+    }
+
+    body {
+        width: 100%;
+        background: var(--tertiary-color);
+        padding-top: 71px;
+    }
+
+    .header {
+        background: var(--secondary-color);
+        height: 72px;
+        width: 100%;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+    }
+
+    nav {
+        padding: 19px 47px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logo {
+        display: flex;
+    }
+
+    .logo-name {
+        font-size: 30px;
+        color: var(--primary-color);
+        letter-spacing: 0.9px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+    }
+
+    .pic {
+        height: 110px;
+        margin: -29px;
+    }
+
+    .search {
+        display: flex;
+    }
+
+    #search_song {
+        width: 657px;
+        padding: 0px 50px;
+        background: var(--tertiary-color);
+        border: 2px solid var(--sixth-color);
+        outline: none;
+        border-radius: 26px;
+        color: var(--fifth-color);
+        height: 39px;
+        font-size: 15px;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: 0.5px;
+    }
+
+    #icon {
+        color: #909090;
+        margin-right: -38px;
+        margin-top: 13px;
+        z-index: 999;
+    }
+
+    .dark_light {
+        padding: 6px 30px;
+    }
+
+    #mode {
+        width: 23px;
+        cursor: pointer;
+    }
+
+    .footer {
+        height: 260px;
+        width: 100%;
+        background: var(--secondary-color);
+        margin-top: 170px;
+        padding: 0px 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .logo1 {
+        display: flex;
+        margin-left: -15px;
+    }
+
+    .made {
+        font-size: 21px;
+        font-family: 'Roboto', sans-serif;
+        color: var(--primary-color);
+        margin-top: 18px;
+    }
+
+    .made1 {
+        font-size: 23px;
+        font-family: 'Roboto', sans-serif;
+        color: red;
+        margin-top: 8px;
+    }
+
+    .container1 {
+        display: flex;
+    }
+
+    .container1 .foot-bar {
+        color: var(--primary-color);
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 27px;
+    }
+
+    .container1 .foot-bar li {
+        margin: 14px;
+    }
+
+    .link {
+        width: 0;
+    }
+
+    #icons {
+        font-size: 25px;
+        color: var(--primary-color);
+        padding: 7px;
+        border-radius: 50%;
+        background: transparent;
+        border: 2px solid var(--primary-color);
+        transition: transform 0.3s ease-in-out;
+        margin: 10px;
+    }
+
+    .trending {
+        padding: 0px 105px;
+        margin-top: 60px;
+    }
+
+
+    .trend {
+        font-size: 35px;
+        color: var(--fourth-color);
+        font-weight: 500;
+        line-height: 32px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .tren_song {
+        display: grid;
+        margin-top: 63px;
+        grid-gap: 110px 225px;
+        grid-template-columns: auto auto auto;
+        justify-content: flex-start;
+    }
+
+    .song-pic {
+        width: 240px;
+        height: 240px;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .song-pic:hover {
+        transform: scale(1.06);
+    }
+
+    .name {
+        font-size: 24px;
+        font-weight: 500;
+        font-family: 'Roboto', sans-serif;
+        color: var(--fourth-color);
+    }
+
+    @media screen and (max-width:1289px) {
+        .tren_song {
+            display: grid;
+            margin-top: 63px;
+            grid-gap: 110px 134px;
+            grid-template-columns: auto auto auto;
+            justify-content: flex-start;
+        }
+
+        .trending {
+            padding: 0px 74px;
+            margin-top: 60px;
+        }
+
+    }
+
+    @media screen and (max-width:1082px) {
+        .tren_song {
+            grid-gap: 110px 85px;
+        }
+
+        .trending {
+            padding: 0px 47px;
+            margin-top: 60px;
+        }
+
+        nav {
+            padding: 19px 10px;
+        }
+
+        #search_song {
+            width: 330px;
+            font-size: 10px;
+            height: 33px;
+        }
+
+
+    }
+
+    @media screen and (max-width:970px) {
+        .tren_song {
+            grid-gap: 110px 81px;
+        }
+
+        .trending {
+            padding: 0px 47px;
+            margin-top: 60px;
+        }
+
+        nav {
+            padding: 19px 10px;
+        }
+
+        #search_song {
+            width: 330px;
+            font-size: 10px;
+            height: 33px;
+        }
+
+
+        .song-pic {
+            width: 205px;
+            height: 205px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .footer {
+            padding: 0px 18px;
+        }
+
+        .made {
+            font-size: 13px;
+        }
+
+        .made1 {
+            font-size: 15px;
+        }
+
+        .container1 .foot-bar {
+            font-size: 12px;
+        }
+
+        .container1 .foot-bar li {
+            margin: 4px;
+        }
+
+        #icons {
+            font-size: 12px;
+        }
+
+        #icon {
+            font-size: 12px;
+            margin-top: 9.5px;
+        }
+
+
+    }
+
+    @media screen and (max-width:839px) {
+        .tren_song {
+            grid-gap: 110px 70px;
+        }
+
+        .trending {
+            padding: 0px 47px;
+            margin-top: 60px;
+        }
+
+        nav {
+            padding: 19px 10px;
+        }
+
+        #search_song {
+            width: 330px;
+            font-size: 10px;
+            height: 33px;
+        }
+
+
+        .song-pic {
+            width: 173px;
+            height: 173px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .footer {
+            padding: 0px 18px;
+        }
+
+        .made {
+            font-size: 13px;
+        }
+
+        .made1 {
+            font-size: 15px;
+        }
+
+        .container1 .foot-bar {
+            font-size: 12px;
+        }
+
+        .container1 .foot-bar li {
+            margin: 4px;
+        }
+
+        #icons {
+            font-size: 12px;
+        }
+
+        #icon {
+            font-size: 12px;
+            margin-top: 9.5px;
+        }
+
+        .name {
+            font-size: 16px;
+        }
+
+        .trend {
+            font-size: 27px;
+        }
+    }
+
+    @media screen and (max-width:720px) {
+        .tren_song {
+            grid-gap: 110px 70px;
+        }
+
+        .trending {
+            padding: 0px 47px;
+            margin-top: 60px;
+        }
+
+        nav {
+            padding: 19px 10px;
+        }
+
+        #search_song {
+            width: 330px;
+            font-size: 10px;
+            height: 33px;
+        }
+
+
+        .song-pic {
+            width: 153px;
+            height: 153px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.4s ease-in-out;
+        }
+
+
+        .name {
+            font-size: 16px;
+        }
+
+        .trend {
+            font-size: 27px;
+        }
+
+        .footer {
+            padding: 0px 18px;
+        }
+
+        .made {
+            font-size: 13px;
+        }
+
+        .made1 {
+            font-size: 15px;
+        }
+
+        .container1 .foot-bar {
+            font-size: 12px;
+        }
+
+        .container1 .foot-bar li {
+            margin: 4px;
+        }
+
+        #icons {
+            font-size: 12px;
+        }
+
+        #icon {
+            font-size: 12px;
+            margin-top: 9.5px;
+        }
+
+        .header {
+            height: 65px;
+        }
+
+        .logo-name {
+            font-size: 20px;
+        }
+
+        .pic {
+            height: 74px;
+            margin: -18px;
+        }
+
+        #small {
+            width: 42px;
+            height: 42px;
+            margin-left: 22px;
+        }
+    }
+
+    @media screen and (max-width:658px) {
+        .tren_song {
+            grid-gap: 110px 55px;
+        }
+
+        .trending {
+            padding: 0px 36px;
+            margin-top: 60px;
+        }
+
+        nav {
+            padding: 19px 10px;
+        }
+
+        #search_song {
+            width: 270px;
+            font-size: 10px;
+            height: 33px;
+        }
+
+
+        .song-pic {
+            width: 140px;
+            height: 140px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.4s ease-in-out;
+        }
+
+
+        .name {
+            font-size: 16px;
+        }
+
+        .trend {
+            font-size: 27px;
+        }
+
+        .footer {
+            padding: 0px 18px;
+        }
+
+        .made {
+            font-size: 13px;
+        }
+
+        .made1 {
+            font-size: 15px;
+        }
+
+        .container1 .foot-bar {
+            font-size: 12px;
+        }
+
+        .container1 .foot-bar li {
+            margin: 1px -11px;
+        }
+
+        #icons {
+            font-size: 12px;
+            margin: 4px;
+        }
+
+        #icon {
+            font-size: 12px;
+            margin-top: 9.5px;
+        }
+
+        .header {
+            height: 65px;
+        }
+
+        .logo-name {
+            font-size: 20px;
+        }
+
+        .pic {
+            height: 74px;
+            margin: -18px;
+        }
+
+        #small {
+            width: 42px;
+            height: 42px;
+            margin-left: 22px;
+        }
+    }
+
+    @media screen and (max-width:578px) {
+        .tren_song {
+            grid-gap: 110px 42px;
+        }
+
+        .trending {
+            padding: 0px 32px;
+            margin-top: 60px;
+        }
+
+        nav {
+            padding: 19px 10px;
+        }
+
+        #search_song {
+            width: 141px;
+            font-size: 9px;
+            height: 33px;
+        }
+
+
+
+        .song-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.4s ease-in-out;
+        }
+
+
+        .name {
+            font-size: 16px;
+        }
+
+        .trend {
+            font-size: 27px;
+        }
+
+        .footer {
+            padding: 0px 18px;
+        }
+
+        .made {
+            font-size: 13px;
+        }
+
+        .made1 {
+            font-size: 15px;
+        }
+
+        .container1 .foot-bar {
+            font-size: 12px;
+        }
+
+        .container1 .foot-bar li {
+            margin: 1px -11px;
+        }
+
+        #icons {
+            font-size: 12px;
+            margin: 4px;
+        }
+
+        #icon {
+            font-size: 12px;
+            margin-top: 9.5px;
+        }
+
+        .header {
+            height: 65px;
+        }
+
+        .logo-name {
+            font-size: 20px;
+        }
+
+        .pic {
+            height: 74px;
+            margin: -18px;
+        }
+
+        #small {
+            width: 42px;
+            height: 42px;
+            margin-left: 22px;
+        }
+    }
+
+    @media screen and (max-width:490px) {
+        .tren_song {
+            grid-gap: 110px 81px;
+            grid-template-columns: auto auto;
+        }
+
+        .trending {
+            padding: 0px 32px;
+            margin-top: 60px;
+        }
+
+        nav {
+            padding: 19px 10px;
+        }
+
+        #search_song {
+            width: 141px;
+            font-size: 9px;
+            height: 33px;
+        }
+
+
+
+        .song-pic {
+            width: 130px;
+            height: 130px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.4s ease-in-out;
+        }
+
+
+        .name {
+            font-size: 16px;
+        }
+
+        .trend {
+            font-size: 23px;
+        }
+
+        .footer {
+            padding: 0px 18px;
+        }
+
+        .made {
+            font-size: 13px;
+        }
+
+        .made1 {
+            font-size: 15px;
+        }
+
+        .container1 .foot-bar {
+            font-size: 12px;
+        }
+
+        .container1 .foot-bar li {
+            margin: 1px -11px;
+        }
+
+        #icons {
+            font-size: 12px;
+            margin: 4px;
+        }
+
+        #icon {
+            font-size: 12px;
+            margin-top: 9.5px;
+        }
+
+        .header {
+            height: 65px;
+        }
+
+        .logo-name {
+            font-size: 20px;
+        }
+
+        .pic {
+            height: 74px;
+            margin: -18px;
+        }
+
+        #small {
+            width: 42px;
+            height: 42px;
+            margin-left: 22px;
+        }
+    }
+
+    @media screen and (max-width:383px) {
+        .tren_song {
+            grid-gap: 110px 62px;
+            grid-template-columns: auto auto;
+        }
+
+        .trending {
+            padding: 0px 28px;
+            margin-top: 60px;
+        }
+
+        nav {
+            padding: 19px 10px;
+        }
+
+        #search_song {
+            width: 141px;
+            font-size: 9px;
+            height: 33px;
+        }
+
+
+
+        .song-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.4s ease-in-out;
+        }
+
+
+        .name {
+            font-size: 13px;
+        }
+
+        .trend {
+            font-size: 19px;
+        }
+
+        .footer {
+            padding: 0px 18px;
+        }
+
+        .made {
+            font-size: 13px;
+        }
+
+        .made1 {
+            font-size: 15px;
+        }
+
+        .container1 .foot-bar {
+            font-size: 12px;
+        }
+
+        .container1 .foot-bar li {
+            margin: 1px -11px;
+        }
+
+        #icons {
+            font-size: 12px;
+            margin: 4px;
+        }
+
+        #icon {
+            font-size: 12px;
+            margin-top: 9.5px;
+        }
+
+        .header {
+            height: 65px;
+        }
+
+        .logo-name {
+            font-size: 20px;
+        }
+
+        .pic {
+            height: 74px;
+            margin: -18px;
+        }
+
+        #small {
+            width: 42px;
+            height: 42px;
+            margin-left: 22px;
+        }
+
+        #btn_play2 {
+            font-size: 17px;
+            margin: 6px;
+        }
+
+        #btn_play1 {
+            font-size: 17px;
+        }
+
+        #btn_play3 {
+            font-size: 17px;
+        }
+
+        .play_btns {
+            margin: -35px;
+        }
+
+    }
+
+    @media screen and (max-width:323px) {
+        .tren_song {
+            grid-gap: 110px 22px;
+            grid-template-columns: auto auto;
+        }
+
+        .trending {
+            padding: 0px 12px;
+            margin-top: 60px;
+        }
+
+        nav {
+            padding: 19px 10px;
+        }
+
+        #search_song {
+            width: 141px;
+            font-size: 9px;
+            height: 33px;
+        }
+
+
+
+        .song-pic {
+            width: 117px;
+            height: 117px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.4s ease-in-out;
+        }
+
+
+        .name {
+            font-size: 13px;
+        }
+
+        .trend {
+            font-size: 19px;
+        }
+
+        .footer {
+            padding: 0px 18px;
+        }
+
+        .made {
+            font-size: 13px;
+        }
+
+        .made1 {
+            font-size: 15px;
+        }
+
+        .container1 .foot-bar {
+            font-size: 12px;
+        }
+
+        .container1 .foot-bar li {
+            margin: 1px -11px;
+        }
+
+        #icons {
+            font-size: 12px;
+            margin: 4px;
+        }
+
+        #icon {
+            font-size: 12px;
+            margin-top: 9.5px;
+        }
+
+        .header {
+            height: 65px;
+        }
+
+        .logo-name {
+            font-size: 20px;
+        }
+
+        .pic {
+            height: 74px;
+            margin: -18px;
+        }
+
+        #small {
+            width: 42px;
+            height: 42px;
+            margin-left: 22px;
+        }
+
+        .play_btns {
+            margin: -34px;
+        }
+    }
+</style>
+
+<body>
+    <div class="header">
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" class="pic">
+                <span class="logo-name">Melocast</span>
+            </div>
+            <div class="search">
+                <i id="icon" class="fa fa-search"></i><input type="text" id="search_song"
+                    placeholder="Search Artists, Songs, Albums">
+            </div>
+            <div class="dark_light">
+                <img src="images/moon.png" id="mode">
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <ul class="sbar">
+            <li onclick="window.location.href = 'index.html';">All</li>
+            <li onclick="window.location.href = 'trending.html';">Trending Songs</li>
+            <li onclick="window.location.href = 'new.html';">New Releases</li>
+            <li onclick="window.location.href = 'popular.html';">Popular Songs</li>
+            <li onclick="window.location.href = 'top.html';">Top Artists</li>
+            <li onclick="window.location.href = 'punjabi.html';">Punjabi Songs</li>
+            <li onclick="window.location.href = 'hollywood.html';">Hollywood Songs</li>
+        </ul>
+    </div>
+
+    <div class="trending">
+        <h1 class="trend">New Releases</h1>
+        <div class="tren_song">
+            <div class="box">
+                <img src="images/s2.jpg" id="song-pic7" class="song-pic">
+                <p class="name">Baazigar</p>
+            </div>
+            <div class="box">
+                <img src="images/s3.jpg" id="song-pic8" class="song-pic">
+                <p class="name">Main Khiladi</p>
+            </div>
+            <div class="box">
+                <img src="images/s4.jpg" id="song-pic9" class="song-pic">
+                <p class="name">Besharam rang</p>
+            </div>
+            <div class="box">
+                <img src="images/s5.jpg" id="song-pic10" class="song-pic">
+                <p class="name">Jhoome jo pathaan </p>
+            </div>
+            <div class="box">
+                <img src="images/s6.jpg" id="song-pic11" class="song-pic">
+                <p class="name">Ghodey pe sawaar</p>
+            </div>
+            <div class="box">
+                <img src="images/s1.jpg" id="song-pic12" class="song-pic">
+                <p class="name">Maan Meri Jaan</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <div class="foot">
+            <div class="logo1">
+                <img src="images/logo.png" class="pic">
+                <span class="logo-name">Melocast</span>
+            </div>
+            <h1 class="made">Made with ❤️ by,</h1>
+            <h1 class="made1">Hanish Tharwani</h1>
+        </div>
+        <div class="container1">
+            <ul class="foot-bar">
+                <li onclick="window.location.href = 'index.html';">All</li>
+                <li onclick="window.location.href = 'trending.html';">Trending Songs</li>
+                <li onclick="window.location.href = 'new.html';">New Releases</li>
+                <li onclick="window.location.href = 'popular.html';">Popular Songs</li>
+            </ul>
+            <ul class="foot-bar">
+                <li onclick="window.location.href = 'top.html';">Top Artists</li>
+                <li onclick="window.location.href = 'punjabi.html';">Punjabi Songs</li>
+                <li onclick="window.location.href = 'hollywood.html';">Hollywood Songs</li>
+            </ul>
+        </div>
+        <div class="social">
+            <a href="https://github.com/hanishtharwani123" class="link"><i class="fa-brands fa-github"
+                    id="icons"></i></a>
+            <a href="https://twitter.com/TharwaniHanish" class="link"><i class="fa-brands fa-twitter"
+                    id="icons"></i></a>
+            <a href="https://www.linkedin.com/in/hanish-tharwani/" class="link"><i class="fa-brands fa-linkedin-in"
+                    id="icons"></i></i></a>
+        </div>
+    </div>
+    <script src="script1.js"></script>
+    <script>
+        let icon = document.getElementById("mode");
+        icon.addEventListener('click', () => {
+            let white = document.body.classList.toggle('white-theme');
+            if (document.body.classList.contains('white-theme')) {
+                icon.src = 'images/sun.png';
+            } else {
+                icon.src = 'images/moon.png';
+            }
+        })
+    </script>
+</body>

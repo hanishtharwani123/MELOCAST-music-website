@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melocast</title>
+    <link rel="stylesheet" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+
+</head>
+
+<body>
+    <div class="header">
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" class="pic">
+                <span class="logo-name">Melocast</span>
+            </div>
+            <div class="search">
+                <i id="icon" class="fa fa-search"></i><input type="text" id="search_song"
+                    placeholder="Search Artists, Songs, Albums">
+            </div>
+            <div class="dark_light">
+                <img src="images/moon.png" id="mode">
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <ul class="sbar">
+            <li onclick="window.location.href = 'index.html';">All</li>
+            <li onclick="window.location.href = 'trending.html';">Trending Songs</li>
+            <li onclick="window.location.href = 'new.html';">New Releases</li>
+            <li onclick="window.location.href = 'popular.html';">Popular Songs</li>
+            <li onclick="window.location.href = 'top.html';">Top Artists</li>
+            <li onclick="window.location.href = 'punjabi.html';">Punjabi Songs</li>
+            <li onclick="window.location.href = 'hollywood.html';">Hollywood Songs</li>
+        </ul>
+    </div>
+
+
+    <div class="swiper">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide"><img src="images/IMG2.png"></div>
+            <div class="swiper-slide"><img src="images/IMG3.png"></div>
+            <div class="swiper-slide"><img src="images/IMG4.png"></div>
+            <div class="swiper-slide"><img src="images/IMG5.png"></div>
+            <div class="swiper-slide"><img src="images/IMG1.png"></div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+    <div class="trending">
+        <h1 class="trend">Trending Songs</h1>
+        <div class="tren_song">
+            <div class="box">
+                <img src="images/1.webp" id="song-pic1" class="song-pic">
+                <p class="name">Param sundari</p>
+            </div>
+            <div class="box">
+                <img src="images/2.webp" id="song-pic2" class="song-pic">
+                <p class="name">Raataan lambiyan</p>
+            </div>
+            <div class="box">
+                <img src="images/3.webp" id="song-pic3" class="song-pic">
+                <p class="name">Mann bharryaa</p>
+            </div>
+            <div class="box">
+                <img src="images/5.webp" id="song-pic4" class="song-pic">
+                <p class="name">Tera Suit </p>
+            </div>
+            <div class="box">
+                <img src="images/6.webp" id="song-pic5" class="song-pic">
+                <p class="name">Kesariya</p>
+            </div>
+            <div class="box">
+                <img src="images/7.webp" id="song-pic6" class="song-pic">
+                <p class="name">Shayad</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="trending">
+        <h1 class="trend">New Releases</h1>
+        <div class="tren_song">
+            <div class="box">
+                <img src="images/s2.jpg" id="song-pic7" class="song-pic">
+                <p class="name">Baazigar</p>
+            </div>
+            <div class="box">
+                <img src="images/s3.jpg" id="song-pic8" class="song-pic">
+                <p class="name">Main Khiladi</p>
+            </div>
+            <div class="box">
+                <img src="images/s4.jpg" id="song-pic9" class="song-pic">
+                <p class="name">Besharam rang</p>
+            </div>
+            <div class="box">
+                <img src="images/s5.jpg" id="song-pic10" class="song-pic">
+                <p class="name">Jhoome jo pathaan </p>
+            </div>
+            <div class="box">
+                <img src="images/s6.jpg" id="song-pic11" class="song-pic">
+                <p class="name">Ghodey pe sawaar</p>
+            </div>
+            <div class="box">
+                <img src="images/s1.jpg" id="song-pic12" class="song-pic">
+                <p class="name">Maan Meri Jaan</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="trending">
+        <h1 class="trend">Popular Songs</h1>
+        <div class="tren_song">
+            <div class="box">
+                <img src="images/10.jpg" id="song-pic13" class="song-pic">
+                <p class="name">Pasoori</p>
+            </div>
+            <div class="box">
+                <img src="images/11.webp" id="song-pic14" class="song-pic">
+                <p class="name">Tu Aake Dekhle</p>
+            </div>
+            <div class="box">
+                <img src="images/12.webp" id="song-pic15" class="song-pic">
+                <p class="name">Channa mereya</p>
+            </div>
+            <div class="box">
+                <img src="images/13.webp" id="song-pic16" class="song-pic">
+                <p class="name">Dil ko karaar aaya </p>
+            </div>
+            <div class="box">
+                <img src="images/14.webp" id="song-pic17" class="song-pic">
+                <p class="name">295</p>
+            </div>
+            <div class="box">
+                <img src="images/15.webp" id="song-pic18" class="song-pic">
+                <p class="name">Ek tarfa</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="trending">
+        <h1 class="trend">Top Artists</h1>
+        <div class="box1">
+            <img src="images/a8.webp" id="artist">
+            <img src="images/a7.jpg" id="artist">
+            <img src="images/a3.jpg" id="artist">
+            <img src="images/a9.jpg" id="artist">
+            <img src="images/a10.png" id="artist">
+            <img src="images/a6.jpg" id="artist">
+        </div>
+    </div>
+
+    <div class="trending">
+        <h1 class="trend">Punjabi Songs</h1>
+        <div class="tren_song">
+            <div class="box">
+                <img src="images/p1.jpg" id="song-pic19" class="song-pic">
+                <p class="name">Excuses</p>
+            </div>
+            <div class="box">
+                <img src="images/p2.jpg" id="song-pic20" class="song-pic">
+                <p class="name">No love</p>
+            </div>
+            <div class="box">
+                <img src="images/p3.jpg" id="song-pic21" class="song-pic">
+                <p class="name">Rollin</p>
+            </div>
+            <div class="box">
+                <img src="images/p4.webp" id="song-pic22" class="song-pic">
+                <p class="name">Brown munde</p>
+            </div>
+            <div class="box">
+                <img src="images/p5.jpg" id="song-pic23" class="song-pic">
+                <p class="name">Judge</p>
+            </div>
+            <div class="box">
+                <img src="images/p6.webp" id="song-pic24" class="song-pic">
+                <p class="name">Lover</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="trending">
+        <h1 class="trend">Hollywood Songs</h1>
+        <div class="tren_song">
+            <div class="box">
+                <img src="images/h1.webp" id="song-pic25" class="song-pic">
+                <p class="name">Under the influence</p>
+            </div>
+            <div class="box">
+                <img src="images/h2.webp" id="song-pic26" class="song-pic">
+                <p class="name">Middle of the night</p>
+            </div>
+            <div class="box">
+                <img src="images/h3.webp" id="song-pic27" class="song-pic">
+                <p class="name">Calm down</p>
+            </div>
+            <div class="box">
+                <img src="images/h4.webp" id="song-pic28" class="song-pic">
+                <p class="name">One Dance</p>
+            </div>
+            <div class="box">
+                <img src="images/h5.webp" id="song-pic29" class="song-pic">
+                <p class="name">Lovely</p>
+            </div>
+            <div class="box">
+                <img src="images/h6.webp" id="song-pic30" class="song-pic">
+                <p class="name">Love nwantiti</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="foot">
+            <div class="logo1">
+                <img src="images/logo.png" class="pic">
+                <span class="logo-name">Melocast</span>
+            </div>
+            <h1 class="made">Made with ❤️ by,</h1>
+            <h1 class="made1">Hanish Tharwani</h1>
+        </div>
+        <div class="container1">
+            <ul class="foot-bar">
+                <li onclick="window.location.href = 'index.html';">All</li>
+                <li onclick="window.location.href = 'trending.html';">Trending Songs</li>
+                <li onclick="window.location.href = 'new.html';">New Releases</li>
+                <li onclick="window.location.href = 'popular.html';">Popular Songs</li>
+            </ul>
+            <ul class="foot-bar">
+                <li onclick="window.location.href = 'top.html';">Top Artists</li>
+                <li onclick="window.location.href = 'punjabi.html';">Punjabi Songs</li>
+                <li onclick="window.location.href = 'hollywood.html';">Hollywood Songs</li>
+            </ul>
+        </div>
+        <div class="social">
+            <a href="https://github.com/hanishtharwani123" class="link"><i class="fa-brands fa-github"
+                    id="icons"></i></a>
+            <a href="https://twitter.com/TharwaniHanish" class="link"><i class="fa-brands fa-twitter"
+                    id="icons"></i></a>
+            <a href="https://www.linkedin.com/in/hanish-tharwani/" class="link"><i class="fa-brands fa-linkedin-in"
+                    id="icons"></i></i></a>
+        </div>
+    </div>
+
+
+    <!-- <div class="play_bar">
+        <div class="about_song">
+            <i class="fa-solid fa-xmark" id="icon_can"></i>
+            <img src="images/1.webp" id="small">
+            <span class="title">Param Sundari</span>
+        </div>
+        <div class="play_btns">
+            <i class="fa-solid fa-backward-step" id="btn_play1"></i>
+            <i class="fa-solid fa-play" id="btn_play2"></i>
+            <i class="fa-solid fa-forward-step" id="btn_play2"></i>
+        </div>
+        <span id="curr_start">0:00</span>
+        <div class="timeline">
+            <input type="range" id="seek" min="0" value="0" max="100">
+            <div id="bar2"></div>
+            <div class="dot"></div>
+        </div>
+        <span id="curr_start">0:00</span>
+
+        <div class="bar">
+            <i id="ico" class="fa-solid fa-volume"></i>
+            <input type="range" id="vol" min="0" value="30" max="100">
+            <div id="vol_bar"></div>
+            <div class="dot" id="vol_dot"></div>
+        </div>
+    </div> -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+
+            loop: true,
+
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        let icon = document.getElementById("mode");
+        icon.addEventListener('click', () => {
+            let white = document.body.classList.toggle('white-theme');
+            if (document.body.classList.contains('white-theme')) {
+                icon.src = 'images/sun.png';
+            } else {
+                icon.src = 'images/moon.png';
+            }
+        })
+    </script>
+</body>
+
+</html>
